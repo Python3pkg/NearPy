@@ -162,7 +162,7 @@ class HashPermutations(LSHash):
             num_neighbour = config['num_neighbour']
 
             # Get used buckets keys for child hash
-            bucket_keys = child_hash['bucket_keys'].keys()
+            bucket_keys = list(child_hash['bucket_keys'].keys())
 
             # Get actual child hash
             lshash = child_hash['hash']

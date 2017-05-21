@@ -43,7 +43,7 @@ class Permute:
         Init a Permute object. Randomly generate a mapping, e.g. [0,1,2] -> [1,0,2]
         """
         m = list(range(n))
-        for end in xrange(n - 1, 0, -1):
+        for end in range(n - 1, 0, -1):
             r = random.randint(0, end)
             tmp = m[end]
             m[end] = m[r]
@@ -55,7 +55,7 @@ class Permute:
         Permute the bitarray ba inplace.
         """
         c = ba.copy()
-        for i in xrange(len(self.mapping)):
+        for i in range(len(self.mapping)):
             ba[i] = c[self.mapping[i]]
         return ba
 
@@ -64,7 +64,7 @@ class Permute:
         Reversely permute the bitarray ba inplace.
         """
         c = ba.copy()
-        for i in xrange(len(self.mapping)):
+        for i in range(len(self.mapping)):
             ba[self.mapping[i]] = c[i]
         return ba
 

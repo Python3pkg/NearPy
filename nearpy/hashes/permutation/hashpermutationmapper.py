@@ -80,7 +80,7 @@ class HashPermutationMapper(LSHash):
                     prefixed_key = lshash.hash_name+'_'+bucket_key
                     # Get entries from map (bucket keys with hamming distance of 1)
                     if prefixed_key in self.bucket_key_map:
-                        bucket_keys.extend(self.bucket_key_map[prefixed_key].keys())
+                        bucket_keys.extend(list(self.bucket_key_map[prefixed_key].keys()))
         else:
             # If we are indexing (storing) just use child hashes without permuted index
             for lshash in self.child_hashes:

@@ -91,7 +91,7 @@ class PermutedIndex:
 
         # add permutations
         self.permutes = []
-        for i in xrange(self.num_permutation):
+        for i in range(self.num_permutation):
             p = Permute(self.projection_count)
             self.permutes.append(p)
 
@@ -134,7 +134,7 @@ class PermutedIndex:
         query_key = bitarray(bucket_key)
 
         topk = set()
-        for i in xrange(len(self.permutes)):
+        for i in range(len(self.permutes)):
             p = self.permutes[i]
             plist = self.permuted_lists[i]
             candidates = p.search_revert(plist, query_key, self.beam_size)

@@ -78,7 +78,7 @@ class RandomBinaryProjectionTreeNode(object):
 
         # Not leaf, return results of childs
         result = []
-        for child in self.childs.values():
+        for child in list(self.childs.values()):
             result = result + child.collect_all_bucket_keys()
 
         return result

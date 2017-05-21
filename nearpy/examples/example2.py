@@ -67,14 +67,14 @@ def example2():
     permutations.build_permuted_index()
 
     t1 = time.time()
-    print('Indexing took %f seconds' % (t1-t0))
+    print(('Indexing took %f seconds' % (t1-t0)))
 
     # Get random query vector
     query = numpy.random.randn(DIM)
 
     # Do random query on engine 3
     print('\nNeighbour distances with HashPermutations:')
-    print('  -> Candidate count is %d' % engine_perm.candidate_count(query))
+    print(('  -> Candidate count is %d' % engine_perm.candidate_count(query)))
     results = engine_perm.neighbours(query)
     dists = [x[2] for x in results]
     print(dists)
@@ -85,7 +85,7 @@ def example2():
     dists = CosineDistance().distance(matrix, query)
     dists = dists.reshape((-1,))
     dists = sorted(dists)
-    print(dists[:10])
+    print((dists[:10]))
 
     ##########################################################
 
@@ -112,14 +112,14 @@ def example2():
         engine_perm2.store_vector(v)
 
     t1 = time.time()
-    print('Indexing took %f seconds' % (t1-t0))
+    print(('Indexing took %f seconds' % (t1-t0)))
 
     # Get random query vector
     query = numpy.random.randn(DIM)
 
     # Do random query on engine 4
     print('\nNeighbour distances with HashPermutationMapper:')
-    print('  -> Candidate count is %d' % engine_perm2.candidate_count(query))
+    print(('  -> Candidate count is %d' % engine_perm2.candidate_count(query)))
     results = engine_perm2.neighbours(query)
     dists = [x[2] for x in results]
     print(dists)
@@ -130,7 +130,7 @@ def example2():
     dists = CosineDistance().distance(matrix,query)
     dists = dists.reshape((-1,))
     dists = sorted(dists)
-    print(dists[:10])
+    print((dists[:10]))
 
     ##########################################################
 
@@ -152,14 +152,14 @@ def example2():
         engine_rbps.store_vector(v)
 
     t1 = time.time()
-    print('Indexing took %f seconds' % (t1-t0))
+    print(('Indexing took %f seconds' % (t1-t0)))
 
     # Get random query vector
     query = numpy.random.randn(DIM)
 
     # Do random query on engine 4
     print('\nNeighbour distances with multiple binary hashes:')
-    print('  -> Candidate count is %d' % engine_rbps.candidate_count(query))
+    print(('  -> Candidate count is %d' % engine_rbps.candidate_count(query)))
     results = engine_rbps.neighbours(query)
     dists = [x[2] for x in results]
     print(dists)
@@ -170,6 +170,6 @@ def example2():
     dists = CosineDistance().distance(matrix,query)
     dists = dists.reshape((-1,))
     dists = sorted(dists)
-    print(dists[:10])
+    print((dists[:10]))
 
     ##########################################################

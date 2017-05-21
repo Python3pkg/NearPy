@@ -59,7 +59,7 @@ class TestPermutation(unittest.TestCase):
 
         # First index some random vectors
         matrix = numpy.zeros((1000,200))
-        for i in xrange(1000):
+        for i in range(1000):
             v = numpy.random.randn(200)
             matrix[i] = v
             self.engine.store_vector(v)
